@@ -5,7 +5,6 @@ var usage = require('./usage')
 
 var args = process.argv.slice(2)
 
-const src = path.join(__dirname, '../templates/box')
 var boxName = args[1]
 
 module.exports = addBox
@@ -32,7 +31,7 @@ function addBox () {
 
 
   copyTemplate(dest)
-  renameMarkdownFile(boxName)
+  renameMarkdownFile(dest, boxName)
 }
 
 function isInsideValidProject () {
@@ -40,12 +39,12 @@ function isInsideValidProject () {
 }
 
 function copyTemplate (dest) {
-  fse.copySync(src, dest)
+  fse.copySync(path.join(__dirname, '../templates/box'), dest)
 }
 
-function renameMarkdownFile (boxName) {
-  var src = path.join(process.cwd(), boxName,'box.md')
-  var dest = path.join(process.cwd(), boxName, boxName + '.md')
+function renameMarkdownFile (dest, boxName) {
+  var src = path.join(dest, 'box.md')
+  dest = path.join(dest, boxName + '.md')
 
   fse.move(src, dest)
 }
