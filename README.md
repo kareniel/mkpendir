@@ -4,7 +4,9 @@ create a new pentest project folder
 
 ## install
 
+```console
 $ npm install mkpendir
+```
 
 ## usage
 
