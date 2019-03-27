@@ -4,7 +4,7 @@
   "description": "create a new pentest project folder",
   "main": "src/index.js",
   "bin": {
-    "mkpendir": "src/index.js"
+    "mkpendir": "scripts/index.js"
   },
   "scripts": {
     "test": "echo 'no tests'"
