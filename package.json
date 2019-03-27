@@ -1,0 +1,21 @@
+{
+  "name": "mkpendir",
+  "version": "1.0.0",
+  "description": "create a new pentest project folder",
+  "main": "src/index.js",
+  "bin": {
+    "mkpendir": "src/index.js"
+  },
+  "scripts": {
+    "test": "echo 'no tests'"
+  },
+  "keywords": [
+    "pentest"
+  ],
+  "author": "kareniel",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "snake-case": "^2.1.0"
+  }
+}
