@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var scaffoldProject = require('./scaffold')
 var usage = require('./usage')
 
