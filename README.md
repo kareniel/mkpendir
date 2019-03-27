@@ -8,7 +8,7 @@ $ npm install mkpendir
 
 ## usage
 
-```sh
+```console
 $ mkpendir
 usage: mkpendir [command] [arguments]
 
