@@ -1,10 +1,14 @@
 {
   "name": "mkpendir",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "create a new pentest project folder",
   "main": "src/index.js",
   "bin": {
     "mkpendir": "scripts/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kareniel/mkpendir.git"
   },
   "scripts": {
     "test": "echo 'no tests'"
