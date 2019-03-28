@@ -22,7 +22,7 @@ function addBox () {
   
   boxName = snakeCase(boxName)
 
-  var dest = path.join(process.cwd(), boxName)
+  var dest = path.join(process.cwd(), 'boxes', boxName)
 
   if (fse.pathExistsSync(dest)) {
     process.stdout.write('A box with that name already exists.\n')
