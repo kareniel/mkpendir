@@ -5,33 +5,33 @@ var usage = require('./usage')
 
 var args = process.argv.slice(2)
 
-var boxName = args[1]
+var machineName = args[1]
 
-module.exports = addBox
+module.exports = addMachine
 
-function addBox () {
+function addMachine () {
   if (!isInsideValidProject()) {
     process.stdout.write('Not inside a valid project', process.cwd())
     process.exit(1)
   }
 
-  if (!boxName) {
+  if (!machineName) {
     process.stdout.write(usage)
     process.exit(1)
   }
   
-  boxName = snakeCase(boxName)
+  machineName = snakeCase(machineName)
 
-  var dest = path.join(process.cwd(), 'boxes', boxName)
+  var dest = path.join(process.cwd(), 'machines', machineName)
 
   if (fse.pathExistsSync(dest)) {
-    process.stdout.write('A box with that name already exists.\n')
+    process.stdout.write('A machine with that name already exists.\n')
     process.exit(1)
   }
 
 
   copyTemplate(dest)
-  renameMarkdownFile(dest, boxName)
+  renameMarkdownFile(dest, machineName)
 }
 
 function isInsideValidProject () {
@@ -39,12 +39,12 @@ function isInsideValidProject () {
 }
 
 function copyTemplate (dest) {
-  fse.copySync(path.join(__dirname, '../templates/box'), dest)
+  fse.copySync(path.join(__dirname, '../templates/machine'), dest)
 }
 
-function renameMarkdownFile (dest, boxName) {
-  var src = path.join(dest, 'box.md')
-  dest = path.join(dest, boxName + '.md')
+function renameMarkdownFile (dest, machineName) {
+  var src = path.join(dest, 'machine.md')
+  dest = path.join(dest, machineName + '.md')
 
   fse.move(src, dest)
 }
