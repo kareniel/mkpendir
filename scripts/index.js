@@ -8,7 +8,7 @@ var args = process.argv.slice(2)
 const command = args[0]
 
 var fn = {
-  add: require('./add-box')
+  add: require('./add-machine')
 }[command]
 
 if (!fn)
